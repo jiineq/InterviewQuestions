@@ -3,6 +3,7 @@
 //all dates are strings 
 //assumes strings are 01-01-2018 format 
 //input 01-01-2018 -> output "January 1st"
+
 import java.util.*;
 
 class cap1q1 {
@@ -13,6 +14,8 @@ class cap1q1 {
 		String test4 = "07-21-2015";
 		String test5 = "07-20-1999";
 		String test6 = "12-22-2131";
+		String test7 = "04-11-2121";
+		String test8 = "04-12-2121";
 
 		System.out.println(foo(test1));
 		System.out.println(foo(test2));
@@ -20,6 +23,8 @@ class cap1q1 {
 		System.out.println(foo(test4));
 		System.out.println(foo(test5));
 		System.out.println(foo(test6));
+		System.out.println(foo(test7));
+		System.out.println(foo(test8));
 
 	}
 
@@ -46,6 +51,10 @@ class cap1q1 {
 		}
 		int n = Integer.parseInt(arr[1]);
 		int p = n%10; //gets rightmost digit 
+		//why is english such a dumb inconsistent language are you serious -_- 11st, 12nd ugh
+		if (Integer.parseInt(arr[1])/10 == 1) return s + " " + n + "th"; 
+
+		//normal cases 
 		if (p == 1) { 
 			s +=(" " + n + "st");
 		}
